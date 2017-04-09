@@ -1,2 +1,2 @@
-# portfolio
-Portfolio of Richard McCartney http://mccartney.io/
+# Portfolio
+Portfolio of Richard McCartney http://mccartney.io/.
