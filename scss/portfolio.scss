@@ -1,0 +1,331 @@
+//
+// Import PrimoCSS framework
+//
+
+@import '../node_modules/primocss/scss/primocss';
+
+* {
+  letter-spacing: 0.03rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: $font-weight-lt;
+  letter-spacing: 0.11rem;
+}
+
+a {
+  @include link-style(
+    $color: inherit,
+    $hover: $color-grey,
+    $active: $color-grey-darker,
+    $visited: $color-grey-darker
+  );
+
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+  transform: translateZ(0);
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: $color-grey;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+    transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1) 0s;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    &:before {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+  }
+}
+
+p,
+li {
+  font-weight: $font-weight-rg;
+}
+
+hr {
+  border-top: 1px solid $color-grey-darker;
+  display: inline-block;
+  height: 1px;
+  width: 40px;
+}
+
+.cover {
+
+  &--two-thirds {
+    min-height: calc(100vh / 3 * 2);
+  }
+
+  &--three-quarters {
+    min-height: calc(100vh / 4 * 3);
+  }
+}
+
+.strip {
+  border-color: $color-grey-light;
+  padding: 120px 0;
+
+  @if $global-responsive == true {
+    @include set-breakpoint-max(lg) {
+      padding: $global-spacing-unit-xl 0;
+    }
+  }
+}
+
+.header {
+  background-color: $color-grey-darkest;
+  color: $color-white;
+  padding: $global-spacing-unit 0 0;
+  width: 100%;
+
+  @include set-breakpoint-max(md) {
+    position: relative;
+    padding: $global-spacing-unit 0;
+  }
+
+  &__logo {
+    @include font-size(20px);
+    padding: 7px 10px;
+    display: inline-block;
+    box-shadow: 0 -20px 0 $color-black;
+    color: $color-grey-darkest;
+    background-color: $color-white;
+    text-decoration: none;
+    transition: all .2s;
+
+    &:before {
+      display: none;
+    }
+
+    &:hover {
+      color: $color-grey-darkest;
+    }
+  }
+
+  &__nav {
+    text-align: center;
+  }
+
+  &__link {
+    color: $color-grey;
+
+    margin: {
+      left: $global-spacing-unit-sm;
+      right: $global-spacing-unit-sm;
+    }
+
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:visited {
+      color: $color-white;
+
+      &:before {
+        color: $color-white;
+      }
+    }
+  }
+}
+
+.intro {
+  background-color: $color-grey-darkest;
+  color: $color-white;
+  min-height: 75vh;
+
+  &__content {
+    position: relative;
+  }
+
+  &__text {
+    @include font-heading(42px, $font-weight-lt);
+  }
+
+  &__link {
+    color: $color-grey;
+    text-decoration: none;
+
+    &:before {
+      color: $color-white;
+    }
+
+    &:hover {
+      color: $color-white;
+    }
+
+    &:active,
+    &:visited {
+      color: $color-grey-light;
+    }
+  }
+
+  &__scroll-to {
+    @include font-size(36px);
+    background: none;
+    border: 0;
+    display: block;
+    font-weight: $font-weight-lt;
+    margin-top: $global-spacing-unit-xl;
+    position: relative;
+    text-decoration: none;
+    transition: all .3s ease-out;
+
+    &:before {
+      display: none;
+    }
+
+    &:hover {
+      transform: translate(0, -5px);
+    }
+
+    &:active,
+    &:visited {
+      color: inherit;
+    }
+  }
+}
+
+.brands {
+
+  &__item {
+    @include opacity(.5);
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+    padding: $global-spacing-unit-lg 0;
+    text-align: center;
+    transition: all .2s;
+
+    img {
+      display: initial;
+    }
+
+    &:hover {
+      @include opacity(1);
+      -webkit-filter: grayscale(0);
+      filter: grayscale(0);
+      transform: scale(1.2);
+    }
+  }
+}
+
+.work {
+  padding-top: $global-spacing-unit-lg;
+
+  &__item {
+    background-color: $color-grey-lightest;
+    overflow: hidden;
+  }
+}
+
+.footer {
+  background-color: $color-grey-darkest;
+  color: $color-white;
+  margin: 0;
+
+  @include set-breakpoint-max(md) {
+    text-align: center;
+
+    .u-align-right {
+      text-align: center;
+    }
+  }
+
+  .strip {
+    border-color: $color-grey-darker;
+  }
+
+  &__logo {
+    @include font-size(20px);
+    background: $color-white;
+    box-shadow: 0 -20px 0 $color-black;
+    color: $color-grey-darkest;
+    display: inline-block;
+    padding: 7px 10px;
+    position: relative;
+    text-decoration: none;
+
+    &:before {
+      display: none;
+    }
+
+    &:hover {
+      color: $color-grey-darkest;
+    }
+
+    @include set-breakpoint-max(md) {
+      margin-bottom: $global-spacing-unit;
+    }
+  }
+
+  &__link {
+    color: $color-grey;
+    text-decoration: none;
+
+    &:before {
+      color: $color-white;
+    }
+
+    &:hover {
+      color: $color-white;
+    }
+
+    &:active,
+    &:visited {
+      color: $color-grey-light;
+    }
+  }
+
+  &__divide {
+    border-color: $color-white;
+  }
+
+  &__list {
+    list-style: none;
+
+    @include set-breakpoint-max(md) {
+      padding: 0;
+    }
+  }
+}
+
+@-webkit-keyframes background {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@-moz-keyframes background {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@-o-keyframes background {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+@keyframes background {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
