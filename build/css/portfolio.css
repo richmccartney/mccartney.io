@@ -1871,30 +1871,29 @@ option {
 .u-max-width-full {
   max-width: 100%; }
 
-* {
-  letter-spacing: 0.03rem; }
+html {
+  font-family: 'Work Sans', sans-serif; }
 
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-weight: 300;
-  letter-spacing: 0.11rem; }
+  font-weight: 300; }
 
 a {
-  color: inherit;
+  color: #203CFD;
   text-decoration: underline;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
   transform: translateZ(0);
   position: relative; }
   a:visited {
-    color: #333; }
+    color: #203CFD; }
   a:hover {
-    color: #888; }
+    color: #203CFD; }
   a:active {
-    color: #333; }
+    color: #203CFD; }
   a:before {
     content: '';
     position: absolute;
@@ -1902,7 +1901,7 @@ a {
     height: 2px;
     bottom: -2px;
     left: 0;
-    background-color: #888;
+    background-color: #203CFD;
     visibility: hidden;
     transform: scaleX(0);
     transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1) 0s; }
@@ -1914,13 +1913,23 @@ a {
 
 p,
 li {
+  font-weight: 300; }
+
+b,
+strong {
   font-weight: 400; }
 
 hr {
-  border-top: 1px solid #333;
   display: inline-block;
   height: 1px;
-  width: 40px; }
+  width: 40px;
+  height: 10px;
+  background: url(../../assets/dark-wave-line.svg);
+  background-size: 100%;
+  background-repeat: no-repeat; }
+
+abbr[title] {
+  border-bottom: 0; }
 
 .cover--two-thirds {
   min-height: calc(100vh / 3 * 2); }
@@ -1929,15 +1938,14 @@ hr {
   min-height: calc(100vh / 4 * 3); }
 
 .strip {
-  border-color: #cbcbcb;
+  border: 0;
   padding: 120px 0; }
   @media screen and (max-width: 1024px) {
     .strip {
       padding: 64px 0; } }
 
 .header {
-  background-color: #111;
-  color: #fff;
+  background-color: #f7f7f7;
   padding: 16px 0 0;
   width: 100%; }
   @media screen and (max-width: 768px) {
@@ -1947,56 +1955,43 @@ hr {
   .header__logo {
     font-size: 20px;
     font-size: 1.25rem;
+    box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.15);
     padding: 7px 10px;
     display: inline-block;
-    box-shadow: 0 -20px 0 #000;
-    color: #111;
-    background-color: #fff;
+    color: #f7f7f7;
+    background-color: #203CFD;
     text-decoration: none;
     transition: all .2s; }
     .header__logo:before {
       display: none; }
     .header__logo:hover {
-      color: #111; }
+      color: #f7f7f7; }
   .header__nav {
     text-align: center; }
   .header__link {
-    color: #888;
     margin-left: 8px;
     margin-right: 8px;
     text-decoration: none; }
-    .header__link:hover, .header__link:active, .header__link:visited {
-      color: #fff; }
-      .header__link:hover:before, .header__link:active:before, .header__link:visited:before {
-        color: #fff; }
 
 .intro {
-  background-color: #111;
-  color: #fff;
+  background-color: #f7f7f7;
   min-height: 75vh; }
   .intro__content {
     position: relative; }
   .intro__text {
-    font-size: 42px;
-    font-size: 2.625rem;
+    font-size: 38px;
+    font-size: 2.375rem;
     font-weight: 300; }
     @media screen and (max-width: 768px) {
       .intro__text {
-        font-size: 41px;
-        font-size: 2.5625rem; } }
+        font-size: 37px;
+        font-size: 2.3125rem; } }
     @media screen and (max-width: 420px) {
       .intro__text {
-        font-size: 40px;
-        font-size: 2.5rem; } }
+        font-size: 36px;
+        font-size: 2.25rem; } }
   .intro__link {
-    color: #888;
     text-decoration: none; }
-    .intro__link:before {
-      color: #fff; }
-    .intro__link:hover {
-      color: #fff; }
-    .intro__link:active, .intro__link:visited {
-      color: #cbcbcb; }
   .intro__scroll-to {
     font-size: 36px;
     font-size: 2.25rem;
@@ -2012,31 +2007,35 @@ hr {
       display: none; }
     .intro__scroll-to:hover {
       transform: translate(0, -5px); }
-    .intro__scroll-to:active, .intro__scroll-to:visited {
-      color: inherit; }
+    @media screen and (max-width: 768px) {
+      .intro__scroll-to {
+        margin: 0 auto; } }
 
-.brands__item {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0.5)";
-  filter: alpha(opacity=0.5);
-  opacity: 0.5;
-  filter: grayscale(1);
-  padding: 32px 0;
-  text-align: center;
-  transition: all .2s; }
-  .brands__item img {
-    display: initial; }
-  .brands__item:hover {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=1)";
-    filter: alpha(opacity=1);
-    opacity: 1;
-    filter: grayscale(0);
-    transform: scale(1.2); }
+.brands {
+  background-color: #203CFD;
+  color: #fff; }
+  .brands hr {
+    background-image: url(../../assets/white-wave-line.svg); }
+  .brands__item {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0.8)";
+    filter: alpha(opacity=0.8);
+    opacity: 0.8;
+    padding: 32px 0;
+    text-align: center; }
+    .brands__item img {
+      display: initial; }
 
 .work {
-  padding-top: 32px; }
-  .work__item {
-    background-color: #f7f7f7;
-    overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
+  .work__browser {
+    border-radius: 4px;
+    box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.05);
+    background-color: #eee;
+    margin-top: 64px;
+    width: 100%;
+    overflow: hidden;
+    padding: 64px; }
 
 .footer {
   background-color: #111;
@@ -2073,8 +2072,12 @@ hr {
       color: #fff; }
     .footer__link:hover {
       color: #fff; }
+      .footer__link:hover:before {
+        background-color: #fff; }
     .footer__link:active, .footer__link:visited {
-      color: #cbcbcb; }
+      color: #888; }
+      .footer__link:active:hover, .footer__link:visited:hover {
+        color: #fff; }
   .footer__divide {
     border-color: #fff; }
   .footer__list {
@@ -2083,10 +2086,5 @@ hr {
       .footer__list {
         padding: 0; } }
 
-@keyframes background {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
+u-overflow-visible {
+  overflow: visible !important; }

@@ -4,8 +4,15 @@
 
 @import '../node_modules/primocss/scss/primocss';
 
-* {
-  letter-spacing: 0.03rem;
+@mixin rgba-background($hexcolor, $opacity) {
+  background-color: $hexcolor;
+  background-color: rgba($hexcolor, $opacity);
+}
+
+$color-neon-blue: #203CFD;
+
+html {
+  font-family: 'Work Sans', sans-serif;
 }
 
 h1,
@@ -14,15 +21,14 @@ h3,
 h4,
 h5 {
   font-weight: $font-weight-lt;
-  letter-spacing: 0.11rem;
 }
 
 a {
   @include link-style(
-    $color: inherit,
-    $hover: $color-grey,
-    $active: $color-grey-darker,
-    $visited: $color-grey-darker
+    $color: $color-neon-blue,
+    $hover: $color-neon-blue,
+    $active: $color-neon-blue,
+    $visited: $color-neon-blue
   );
 
   text-decoration: none;
@@ -37,7 +43,7 @@ a {
     height: 2px;
     bottom: -2px;
     left: 0;
-    background-color: $color-grey;
+    background-color: $color-neon-blue;
     visibility: hidden;
     -webkit-transform: scaleX(0);
     transform: scaleX(0);
@@ -58,14 +64,26 @@ a {
 
 p,
 li {
-  font-weight: $font-weight-rg;
+  font-weight: $font-weight-lt;
+}
+
+b,
+strong {
+  font-weight: $global-font-weight;
 }
 
 hr {
-  border-top: 1px solid $color-grey-darker;
   display: inline-block;
   height: 1px;
   width: 40px;
+  height: 10px;
+  background: url(../../assets/dark-wave-line.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+abbr[title] {
+  border-bottom: 0;
 }
 
 .cover {
@@ -80,7 +98,7 @@ hr {
 }
 
 .strip {
-  border-color: $color-grey-light;
+  border: 0;
   padding: 120px 0;
 
   @if $global-responsive == true {
@@ -91,8 +109,7 @@ hr {
 }
 
 .header {
-  background-color: $color-grey-darkest;
-  color: $color-white;
+  background-color: $color-grey-lightest;
   padding: $global-spacing-unit 0 0;
   width: 100%;
 
@@ -103,11 +120,11 @@ hr {
 
   &__logo {
     @include font-size(20px);
+    box-shadow: 0 1px 25px 5px rgba(black, 0.15);
     padding: 7px 10px;
     display: inline-block;
-    box-shadow: 0 -20px 0 $color-black;
-    color: $color-grey-darkest;
-    background-color: $color-white;
+    color: $color-grey-lightest;
+    background-color: $color-neon-blue;
     text-decoration: none;
     transition: all .2s;
 
@@ -116,7 +133,7 @@ hr {
     }
 
     &:hover {
-      color: $color-grey-darkest;
+      color: $color-grey-lightest;
     }
   }
 
@@ -125,30 +142,17 @@ hr {
   }
 
   &__link {
-    color: $color-grey;
-
     margin: {
       left: $global-spacing-unit-sm;
       right: $global-spacing-unit-sm;
     }
 
     text-decoration: none;
-
-    &:hover,
-    &:active,
-    &:visited {
-      color: $color-white;
-
-      &:before {
-        color: $color-white;
-      }
-    }
   }
 }
 
 .intro {
-  background-color: $color-grey-darkest;
-  color: $color-white;
+  background-color: $color-grey-lightest;
   min-height: 75vh;
 
   &__content {
@@ -156,25 +160,11 @@ hr {
   }
 
   &__text {
-    @include font-heading(42px, $font-weight-lt);
+    @include font-heading(38px, $font-weight-lt);
   }
 
   &__link {
-    color: $color-grey;
     text-decoration: none;
-
-    &:before {
-      color: $color-white;
-    }
-
-    &:hover {
-      color: $color-white;
-    }
-
-    &:active,
-    &:visited {
-      color: $color-grey-light;
-    }
   }
 
   &__scroll-to {
@@ -196,42 +186,43 @@ hr {
       transform: translate(0, -5px);
     }
 
-    &:active,
-    &:visited {
-      color: inherit;
+    @include set-breakpoint-max(md) {
+      margin: 0 auto;
     }
   }
 }
 
 .brands {
+  background-color: $color-neon-blue;
+  color: $color-white;
+
+  hr {
+    background-image: url(../../assets/white-wave-line.svg);
+  }
 
   &__item {
-    @include opacity(.5);
-    -webkit-filter: grayscale(1);
-    filter: grayscale(1);
+    @include opacity(.8);
     padding: $global-spacing-unit-lg 0;
     text-align: center;
-    transition: all .2s;
 
     img {
       display: initial;
-    }
-
-    &:hover {
-      @include opacity(1);
-      -webkit-filter: grayscale(0);
-      filter: grayscale(0);
-      transform: scale(1.2);
     }
   }
 }
 
 .work {
-  padding-top: $global-spacing-unit-lg;
+  overflow: hidden;
+  position: relative;
 
-  &__item {
-    background-color: $color-grey-lightest;
+  &__browser {
+    border-radius: 4px;
+    box-shadow: 0 1px 25px 5px rgba(black, 0.05);
+    background-color: $color-grey-lighter;
+    margin-top: $global-spacing-unit-xl;
+    width: 100%;
     overflow: hidden;
+    padding: $global-spacing-unit-xl;
   }
 }
 
@@ -285,11 +276,19 @@ hr {
 
     &:hover {
       color: $color-white;
+
+      &:before {
+        background-color: $color-white;
+      }
     }
 
     &:active,
     &:visited {
-      color: $color-grey-light;
+      color: $color-grey;
+
+      &:hover {
+        color: $color-white;
+      }
     }
   }
 
@@ -306,26 +305,6 @@ hr {
   }
 }
 
-@-webkit-keyframes background {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-
-@-moz-keyframes background {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-
-@-o-keyframes background {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-
-@keyframes background {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+u-overflow-visible {
+  overflow: visible !important;
 }
