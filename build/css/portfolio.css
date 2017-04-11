@@ -1931,6 +1931,12 @@ hr {
 abbr[title] {
   border-bottom: 0; }
 
+figure {
+  border: 0; }
+
+.container {
+  padding: 0 32px; }
+
 .cover--two-thirds {
   min-height: calc(100vh / 3 * 2); }
 
@@ -1946,12 +1952,8 @@ abbr[title] {
 
 .header {
   background-color: #f7f7f7;
-  padding: 16px 0 0;
+  padding: 32px 0 0;
   width: 100%; }
-  @media screen and (max-width: 768px) {
-    .header {
-      position: relative;
-      padding: 16px 0; } }
   .header__logo {
     font-size: 20px;
     font-size: 1.25rem;
@@ -2013,7 +2015,10 @@ abbr[title] {
 
 .brands {
   background-color: #203CFD;
-  color: #fff; }
+  box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  margin: 0 auto;
+  width: calc(100% - 64px); }
   .brands hr {
     background-image: url(../../assets/white-wave-line.svg); }
   .brands__item {
@@ -2022,8 +2027,14 @@ abbr[title] {
     opacity: 0.8;
     padding: 32px 0;
     text-align: center; }
+    @media screen and (max-width: 768px) {
+      .brands__item {
+        padding: 16px 0; } }
     .brands__item img {
       display: initial; }
+      @media screen and (max-width: 420px) {
+        .brands__item img {
+          max-width: 125px; } }
 
 .work {
   overflow: hidden;
@@ -2032,10 +2043,13 @@ abbr[title] {
     border-radius: 4px;
     box-shadow: 0 1px 25px 5px rgba(0, 0, 0, 0.05);
     background-color: #eee;
-    margin-top: 64px;
     width: 100%;
     overflow: hidden;
+    max-height: 900px;
     padding: 64px; }
+    @media screen and (max-width: 768px) {
+      .work__browser {
+        padding: 16px; } }
 
 .footer {
   background-color: #111;
@@ -2048,11 +2062,12 @@ abbr[title] {
         text-align: center; } }
   .footer .strip {
     border-color: #333; }
+    .footer .strip + .strip {
+      border-top: 1px dotted #333; }
   .footer__logo {
     font-size: 20px;
     font-size: 1.25rem;
     background: #fff;
-    box-shadow: 0 -20px 0 #000;
     color: #111;
     display: inline-block;
     padding: 7px 10px;
@@ -2079,7 +2094,7 @@ abbr[title] {
       .footer__link:active:hover, .footer__link:visited:hover {
         color: #fff; }
   .footer__divide {
-    border-color: #fff; }
+    background-image: url(../../assets/white-wave-line.svg); }
   .footer__list {
     list-style: none; }
     @media screen and (max-width: 768px) {

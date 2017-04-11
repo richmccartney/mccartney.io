@@ -86,6 +86,15 @@ abbr[title] {
   border-bottom: 0;
 }
 
+figure {
+  border: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 0 $global-spacing-unit-lg;
+}
+
 .cover {
 
   &--two-thirds {
@@ -110,13 +119,8 @@ abbr[title] {
 
 .header {
   background-color: $color-grey-lightest;
-  padding: $global-spacing-unit 0 0;
+  padding: $global-spacing-unit-lg 0 0;
   width: 100%;
-
-  @include set-breakpoint-max(md) {
-    position: relative;
-    padding: $global-spacing-unit 0;
-  }
 
   &__logo {
     @include font-size(20px);
@@ -194,7 +198,10 @@ abbr[title] {
 
 .brands {
   background-color: $color-neon-blue;
+  box-shadow: 0 1px 25px 5px rgba(black, 0.2);
   color: $color-white;
+  margin: 0 auto;
+  width: calc(100% - #{$global-spacing-unit-xl});
 
   hr {
     background-image: url(../../assets/white-wave-line.svg);
@@ -205,8 +212,16 @@ abbr[title] {
     padding: $global-spacing-unit-lg 0;
     text-align: center;
 
+    @include set-breakpoint-max(md) {
+      padding: $global-spacing-unit 0;
+    }
+
     img {
       display: initial;
+
+      @include set-breakpoint-max(sm) {
+        max-width: 125px;
+      }
     }
   }
 }
@@ -219,10 +234,14 @@ abbr[title] {
     border-radius: 4px;
     box-shadow: 0 1px 25px 5px rgba(black, 0.05);
     background-color: $color-grey-lighter;
-    margin-top: $global-spacing-unit-xl;
     width: 100%;
     overflow: hidden;
+    max-height: 900px;
     padding: $global-spacing-unit-xl;
+
+    @include set-breakpoint-max(md) {
+      padding: $global-spacing-unit;
+    }
   }
 }
 
@@ -241,12 +260,15 @@ abbr[title] {
 
   .strip {
     border-color: $color-grey-darker;
+
+    + .strip {
+      border-top: 1px dotted $color-grey-darker;
+    }
   }
 
   &__logo {
     @include font-size(20px);
     background: $color-white;
-    box-shadow: 0 -20px 0 $color-black;
     color: $color-grey-darkest;
     display: inline-block;
     padding: 7px 10px;
@@ -293,7 +315,7 @@ abbr[title] {
   }
 
   &__divide {
-    border-color: $color-white;
+    background-image: url(../../assets/white-wave-line.svg);
   }
 
   &__list {
