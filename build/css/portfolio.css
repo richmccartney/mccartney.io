@@ -19,6 +19,9 @@ fieldset,
 legend {
   padding: 0; }
 
+hr {
+  border: 0; }
+
 li > ol,
 li > ul {
   margin-bottom: 0; }
@@ -38,7 +41,7 @@ html {
   -webkit-font-smoothing: antialiased;
   background-color: #fff;
   color: #333;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-weight: 400;
   height: 100%;
   line-height: 1.5;
@@ -93,7 +96,8 @@ fieldset {
     padding: 8px 16px; }
 
 label {
-  cursor: pointer; }
+  cursor: pointer;
+  display: inherit; }
   label::after {
     content: "";
     display: block;
@@ -127,6 +131,7 @@ input[type='text'], input[type='password'], input[type='color'], input[type='dat
   border-radius: 4px;
   border-style: solid;
   border-width: 1px;
+  display: inherit;
   font-family: inherit;
   max-width: 100%;
   outline: none;
@@ -216,6 +221,41 @@ input[type='button'], input[type='reset'], input[type='submit'] {
     input[type='button']:disabled:active, input[type='button']:disabled:focus, input[type='button']:disabled:hover, input[type='reset']:disabled:active, input[type='reset']:disabled:focus, input[type='reset']:disabled:hover, input[type='submit']:disabled:active, input[type='submit']:disabled:focus, input[type='submit']:disabled:hover {
       background-color: #00a6ed;
       border-color: #00a6ed; }
+  input[type='button'] + button,
+  input[type='button'] + [type='button'],
+  input[type='button'] + [type='reset'],
+  input[type='button'] + [type='submit'], input[type='reset'] + button,
+  input[type='reset'] + [type='button'],
+  input[type='reset'] + [type='reset'],
+  input[type='reset'] + [type='submit'], input[type='submit'] + button,
+  input[type='submit'] + [type='button'],
+  input[type='submit'] + [type='reset'],
+  input[type='submit'] + [type='submit'] {
+    margin-top: 0; }
+    @media screen and (max-width: 420px) {
+      input[type='button'] + button,
+      input[type='button'] + [type='button'],
+      input[type='button'] + [type='reset'],
+      input[type='button'] + [type='submit'], input[type='reset'] + button,
+      input[type='reset'] + [type='button'],
+      input[type='reset'] + [type='reset'],
+      input[type='reset'] + [type='submit'], input[type='submit'] + button,
+      input[type='submit'] + [type='button'],
+      input[type='submit'] + [type='reset'],
+      input[type='submit'] + [type='submit'] {
+        margin-top: 4px; } }
+    @media screen and (max-width: 768px) {
+      input[type='button'] + button,
+      input[type='button'] + [type='button'],
+      input[type='button'] + [type='reset'],
+      input[type='button'] + [type='submit'], input[type='reset'] + button,
+      input[type='reset'] + [type='button'],
+      input[type='reset'] + [type='reset'],
+      input[type='reset'] + [type='submit'], input[type='submit'] + button,
+      input[type='submit'] + [type='button'],
+      input[type='submit'] + [type='reset'],
+      input[type='submit'] + [type='submit'] {
+        margin-top: 8px; } }
 
 textarea {
   font-size: 16px;
@@ -227,6 +267,7 @@ textarea {
   border-radius: 4px;
   border-style: solid;
   border-width: 1px;
+  display: inherit;
   font-family: inherit;
   max-width: 100%;
   outline: none;
@@ -288,6 +329,7 @@ select {
   border-radius: 4px;
   border-style: solid;
   border-width: 1px;
+  display: inherit;
   font-family: inherit;
   max-width: 100%;
   outline: none;
@@ -347,9 +389,14 @@ select {
     text-shadow: 0 0 0 #000; }
   select::-ms-expand {
     display: none; }
+  select:hover {
+    background-image: url('data:image/svg+xml;utf8,%3Csvg width="10" height="3" viewBox="0 0 10 3" xmlns="http://www.w3.org/2000/svg"%3E%3Ctitle%3E⌄%3C/title%3E%3Cpath fill="%23000000" d="M9.234 0L4.617 3 0 0h1.788l2.83 1.814L7.445 0" fill-rule="evenodd"/%3E%3C/svg%3E');
+    cursor: pointer; }
   select[multiple], select[size] {
     background-image: none;
     height: auto; }
+    select[multiple]:hover, select[size]:hover {
+      background-image: none; }
 
 button {
   font-size: 14px;
@@ -381,6 +428,23 @@ button {
     button:disabled:active, button:disabled:focus, button:disabled:hover {
       background-color: #00a6ed;
       border-color: #00a6ed; }
+  button + button,
+  button + [type='button'],
+  button + [type='reset'],
+  button + [type='submit'] {
+    margin-top: 0; }
+    @media screen and (max-width: 420px) {
+      button + button,
+      button + [type='button'],
+      button + [type='reset'],
+      button + [type='submit'] {
+        margin-top: 4px; } }
+    @media screen and (max-width: 768px) {
+      button + button,
+      button + [type='button'],
+      button + [type='reset'],
+      button + [type='submit'] {
+        margin-top: 8px; } }
 
 h1 {
   font-size: 36px;
@@ -470,11 +534,10 @@ h6 {
       font-size: 0.875rem; } }
 
 hr {
-  border-top: 1px dashed #cbcbcb;
-  border-width: 0; }
+  border-top: 1px dotted #cbcbcb; }
 
 a {
-  color: inherit;
+  color: #005f87;
   text-decoration: underline; }
   a:visited {
     color: #005f87; }
@@ -556,14 +619,14 @@ pre {
 pre {
   font-size: 14px;
   font-size: 0.875rem;
-  background-color: #fff;
+  background-color: #f7f7f7;
   border-color: #eee;
   border-radius: 4px;
   border-style: solid;
   border-width: 1px;
   color: #666;
   overflow: auto;
-  padding: 16px; }
+  padding: 32px; }
   @media screen and (max-width: 768px) {
     pre {
       font-size: 13px;
@@ -583,14 +646,26 @@ abbr[title] {
     cursor: help; }
 
 code {
+  font-size: 14px;
+  font-size: 0.875rem;
   background-color: #eee;
   border-radius: 4px;
-  padding: 4px; }
+  padding: 2px; }
 
 mark {
+  font-size: 14px;
+  font-size: 0.875rem;
   background-color: #ffc333;
   border-radius: 4px;
-  padding: 4px; }
+  padding: 2px; }
+
+kbd {
+  font-size: 14px;
+  font-size: 0.875rem;
+  background-color: #111;
+  border-radius: 4px;
+  color: #fff;
+  padding: 2px; }
 
 small {
   font-size: 75%; }
@@ -1920,6 +1995,7 @@ strong {
   font-weight: 400; }
 
 hr {
+  border: 0;
   display: inline-block;
   height: 1px;
   width: 40px;
