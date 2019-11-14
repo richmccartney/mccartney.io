@@ -12,7 +12,7 @@ header img {
   display: block;
 }
 
-.contact a {
+.contact {
   font-size: calc(0.75 * var(--base-font-size));
   color: var(--color-dark-blue);
   border: 1.5px solid var(--color-grey);
@@ -24,6 +24,7 @@ header img {
 }
 
 main {
+  box-sizing: border-box;
   padding: 0 var(--column-margin);
   margin: 0 auto;
 

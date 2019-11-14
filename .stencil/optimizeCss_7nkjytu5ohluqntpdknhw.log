@@ -1,0 +1,15 @@
+h1 {
+
+}
+
+h5 {
+
+}
+
+p {
+
+}
+
+a:not([class]) {
+  color: var(--color-kashmir-blue);
+}

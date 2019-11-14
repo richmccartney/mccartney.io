@@ -15,6 +15,7 @@
   --color-kashmir-blue: #52658F;
   --color-dark-blue: #333A56;
   --color-grey: #787D90;
+  --color-dark-grey: #333333;
 
   --columns: 12;
   --column-gutter: calc(1.5 * var(--base-spacing));
@@ -80,7 +81,8 @@ body {
 
   min-height: 100vh;
 
-  background: var(--color-white);
+  background: url('/assets/bg.png') no-repeat center top 250px fixed;
+  background-size: 1440px;
 
   color: var(--color-grey);
 
@@ -99,12 +101,11 @@ ol[class] {
 }
 
 /* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-a {
+a:not([class]),
+a:-webkit-any-link {
   color: var(--color-kashmir-blue);
+  text-decoration-skip-ink: auto;
+  text-decoration-color: var(--color-kashmir-blue);
 }
 
 a:hover,
