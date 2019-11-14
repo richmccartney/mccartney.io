@@ -12,7 +12,7 @@ export class AppHome {
       <section>
         <div>
           <h5>Hello my name is Richard McCartney</h5>
-          <h1>Frontend developer, Web designer</h1>
+          <h1>Frontend developer, Web&nbsp;designer</h1>
           <p>I’m an passionate developer and product designer currenting empowering the future of travel and aviation at <a href="https://ba.com">British Airways</a>.</p>
         </div>
         <div>

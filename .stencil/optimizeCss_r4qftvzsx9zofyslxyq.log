@@ -1,5 +1,7 @@
 :host {
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-align: center;
   align-items: center;
   padding: calc(5 * var(--base-spacing)) 0;
 }
@@ -17,6 +19,7 @@ section {
   grid-template-rows: auto;
   grid-gap: var(--column-gutter);
   grid-auto-flow: 1fr;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -71,7 +74,9 @@ a:not([class]) {
 }
 
 .social {
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 
@@ -79,7 +84,9 @@ a:not([class]) {
   --color: var(--color-dark-grey);
 
   color: var(--color);
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-align: center;
   align-items: center;
   text-decoration: none;
   font-weight: var(--font-bold);
