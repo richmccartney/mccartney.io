@@ -19,7 +19,7 @@ export class AppHome {
           <img src="/assets/code.svg" alt="Image of a code editor" class="hero-image" />
           <div class="social">
             <a href="https://github.com/richmccartney" class="github"><img src="/assets/github.svg" alt="Github icon" width="20" /> Github</a>
-            <a href="https://dribbble.com/richmccartney" class="dribbble"><img src="/assets/dribbble.svg" alt="Dribbble icon" width="20" />Dribbble</a>
+            <a href="https://dribbble.com/richmccartney" class="dribbble"><img src="/assets/dribbble.png" alt="Dribbble icon" width="20" />Dribbble</a>
           </div>
         </div>
       </section>
