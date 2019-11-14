@@ -12,9 +12,13 @@ export class AppRoot {
     return (
       <div>
         <header>
-          <h1>Stencil App Starter</h1>
+          <stencil-route-link url='/'>
+            <img src="/assets/logo.svg" alt="RM Logo"/>
+          </stencil-route-link>
+          <stencil-route-link url='/' class="contact">
+            Contact me
+          </stencil-route-link>
         </header>
-
         <main>
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>

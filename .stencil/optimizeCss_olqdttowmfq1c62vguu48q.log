@@ -5,12 +5,11 @@
 
 
 :root {
-  --base-font-size: 1rem;
-  --base-spacing: 1rem;
+  --base-font-size: 16px;
+  --base-spacing: 16px;
   --base-font-family: var(--font-open-sans);
 
   --color-white: #FFFFFF;
-  --color-off-white: #F0F2F7;
   --color-light-blue: #B6BCD5;
   --color-kashmir-blue: #52658F;
   --color-dark-blue: #333A56;
@@ -27,7 +26,7 @@
   --font-semi-bold: 600;
   --font-bold: 700;
 
-  --max-width: calc(90 * var(--base-spacing));
+  --max-width: 1400px;
 }
 
 
@@ -46,6 +45,7 @@
 *,
 *::before,
 *::after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -100,16 +100,8 @@ ol[class] {
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
+  -webkit-text-decoration-skip: ink;
   text-decoration-skip-ink: auto;
-}
-
-a {
-  color: var(--color-kashmir-blue);
-}
-
-a:hover,
-a:visited {
-  color: var(--color-kashmir-blue);
 }
 
 /* Make images easier to work with */
@@ -120,7 +112,7 @@ img {
 
 /* Natural flow and rhythm in articles by default */
 article > * + * {
-  margin-top: var(--base-spacing);
+  margin-top: 1em;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -134,8 +126,11 @@ select {
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   * {
+    -webkit-animation-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
     animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
