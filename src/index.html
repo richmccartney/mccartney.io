@@ -29,15 +29,21 @@
   <meta property="og:description" content="Richard McCartney is a UI focused frontend developer and web designer based in London, UK.">
   
   <!-- Preconnect and preload resources -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i|Playfair+Display:700,700i&display=swap">
+
+  <link rel="preload" href="/build/app.esm.js" as="script">
+  <link rel="preload" href="/build/app.js" as="script">
+
+  <link rel="preload" href="/build/app.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i|Playfair+Display:700,700i&display=swap" as="style">
 
   <!-- App scripts -->
   <script type="module" src="/build/app.esm.js"></script>
   <script nomodule src="/build/app.js"></script>
 
   <!-- App styles -->
-  <link href="/build/app.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i|Playfair+Display:700,700i&display=swap" rel="stylesheet">
+  <link href="/build/app.css" media="screen" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i|Playfair+Display:700,700i&display=swap" media="screen" rel="stylesheet">
 
   <!-- App icons -->
   <link rel="apple-touch-icon" href="/assets/icon/icon.png">
