@@ -81,7 +81,7 @@ body {
 
   min-height: 100vh;
 
-  background: url('/assets/bg.png') no-repeat center top 250px fixed;
+  background: url('/assets/bg.webp') no-repeat center top 250px fixed;
   background-size: 1440px;
 
   color: var(--color-grey);
