@@ -7,7 +7,7 @@
   "author": "Richard McCartney <richard@mccartney.io>",
   "scripts": {
     "build": "stencil build",
-    "build.netlify": "npm run build cp src/_redirects www/_redirects",
+    "build.netlify": "npm run build --prerender cp src/_redirects www/_redirects",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
