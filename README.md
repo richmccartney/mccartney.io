@@ -1,6 +1,6 @@
 # Portfolio
 
-Portfolio website of Richard McCartney, built using Stencil JS and Web Components.
+Portfolio website of Richard McCartney, built using [Stencil JS](http://stenciljs.com) and Web Components. 
 
 ## Getting Started
 
