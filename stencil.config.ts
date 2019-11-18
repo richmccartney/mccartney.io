@@ -13,7 +13,7 @@ export const config: Config = {
       },
       baseUrl: 'https://mccartney.io/',
       copy: [
-        { src: '_redirectes' }
+        { src: '_redirects' }
       ]
     }
   ],
