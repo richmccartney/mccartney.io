@@ -1,0 +1,48 @@
+System.register(['./p-68c26e7b.system.js', './p-c88a966d.system.js'], function (exports) {
+    'use strict';
+    var registerInstance, getElement, ActiveRouter;
+    return {
+        setters: [function (module) {
+                registerInstance = module.r;
+                getElement = module.g;
+            }, function (module) {
+                ActiveRouter = module.A;
+            }],
+        execute: function () {
+            var RouteTitle = exports('stencil_route_title', /** @class */ (function () {
+                function class_1(hostRef) {
+                    registerInstance(this, hostRef);
+                    this.titleSuffix = '';
+                    this.pageTitle = '';
+                }
+                class_1.prototype.updateDocumentTitle = function () {
+                    var el = this.el;
+                    if (el.ownerDocument) {
+                        el.ownerDocument.title = "" + this.pageTitle + (this.titleSuffix || '');
+                    }
+                };
+                class_1.prototype.componentWillLoad = function () {
+                    this.updateDocumentTitle();
+                };
+                Object.defineProperty(class_1.prototype, "el", {
+                    get: function () { return getElement(this); },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(class_1, "watchers", {
+                    get: function () {
+                        return {
+                            "pageTitle": ["updateDocumentTitle"]
+                        };
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                return class_1;
+            }()));
+            ActiveRouter.injectProps(RouteTitle, [
+                'titleSuffix',
+            ]);
+        }
+    };
+});

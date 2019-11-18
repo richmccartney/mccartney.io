@@ -1,0 +1,42 @@
+System.register(['./p-68c26e7b.system.js', './p-c88a966d.system.js'], function (exports) {
+    'use strict';
+    var registerInstance, getElement, ActiveRouter;
+    return {
+        setters: [function (module) {
+                registerInstance = module.r;
+                getElement = module.g;
+            }, function (module) {
+                ActiveRouter = module.A;
+            }],
+        execute: function () {
+            // Get the URL for this route link without the root from the router
+            var getUrl = function (url, root) {
+                // Don't allow double slashes
+                if (url.charAt(0) == '/' && root.charAt(root.length - 1) == '/') {
+                    return root.slice(0, root.length - 1) + url;
+                }
+                return root + url;
+            };
+            var Redirect = exports('stencil_router_redirect', /** @class */ (function () {
+                function class_1(hostRef) {
+                    registerInstance(this, hostRef);
+                }
+                class_1.prototype.componentWillLoad = function () {
+                    if (this.history && this.root && this.url) {
+                        return this.history.replace(getUrl(this.url, this.root));
+                    }
+                };
+                Object.defineProperty(class_1.prototype, "el", {
+                    get: function () { return getElement(this); },
+                    enumerable: true,
+                    configurable: true
+                });
+                return class_1;
+            }()));
+            ActiveRouter.injectProps(Redirect, [
+                'history',
+                'root'
+            ]);
+        }
+    };
+});
