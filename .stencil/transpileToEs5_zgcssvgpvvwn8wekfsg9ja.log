@@ -1,0 +1,75 @@
+System.register(['./p-68c26e7b.system.js', './p-c88a966d.system.js'], function (exports) {
+    'use strict';
+    var registerInstance, getElement, ActiveRouter;
+    return {
+        setters: [function (module) {
+                registerInstance = module.r;
+                getElement = module.g;
+            }, function (module) {
+                ActiveRouter = module.A;
+            }],
+        execute: function () {
+            var StencilRouterPrompt = exports('stencil_router_prompt', /** @class */ (function () {
+                function class_1(hostRef) {
+                    registerInstance(this, hostRef);
+                    this.when = true;
+                    this.message = '';
+                }
+                class_1.prototype.enable = function (message) {
+                    if (this.unblock) {
+                        this.unblock();
+                    }
+                    if (this.history) {
+                        this.unblock = this.history.block(message);
+                    }
+                };
+                class_1.prototype.disable = function () {
+                    if (this.unblock) {
+                        this.unblock();
+                        this.unblock = undefined;
+                    }
+                };
+                class_1.prototype.componentWillLoad = function () {
+                    if (this.when) {
+                        this.enable(this.message);
+                    }
+                };
+                class_1.prototype.updateMessage = function (newMessage, prevMessage) {
+                    if (this.when) {
+                        if (!this.when || prevMessage !== newMessage) {
+                            this.enable(this.message);
+                        }
+                    }
+                    else {
+                        this.disable();
+                    }
+                };
+                class_1.prototype.componentDidUnload = function () {
+                    this.disable();
+                };
+                class_1.prototype.render = function () {
+                    return null;
+                };
+                Object.defineProperty(class_1.prototype, "el", {
+                    get: function () { return getElement(this); },
+                    enumerable: true,
+                    configurable: true
+                });
+                Object.defineProperty(class_1, "watchers", {
+                    get: function () {
+                        return {
+                            "message": ["updateMessage"],
+                            "when": ["updateMessage"]
+                        };
+                    },
+                    enumerable: true,
+                    configurable: true
+                });
+                return class_1;
+            }()));
+            ActiveRouter.injectProps(StencilRouterPrompt, [
+                'history',
+            ]);
+        }
+    };
+});

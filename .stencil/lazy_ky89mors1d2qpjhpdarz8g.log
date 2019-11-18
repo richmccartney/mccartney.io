@@ -1,0 +1,11 @@
+import { registerInstance as __stencil_registerInstance } from "@stencil/core";
+import { h } from "@stencil/core";
+export const AppHome = class {
+    constructor(hostRef) {
+        __stencil_registerInstance(this, hostRef);
+    }
+    render() {
+        return (h("section", null, h("div", null, h("h5", null, "Hello my name is Richard McCartney"), h("h1", null, "Frontend developer, Web designer"), h("p", null, "I\u2019m an passionate developer and product designer currenting empowering the future of travel and aviation at ", h("a", { href: "https://ba.com" }, "British Airways"), ".")), h("div", null, h("img", { src: "/assets/code.svg", alt: "Image of a code editor" }), h("div", { className: "social" }, h("a", { href: "https://github.com/richmccartney", className: "github" }, "Github"), h("a", { href: "https://dribbble.com/richmccartney", className: "dribbble" }, "Dribbble")))));
+    }
+    static get style() { return "STYLE_TEXT_PLACEHOLDER:app-home"; }
+};

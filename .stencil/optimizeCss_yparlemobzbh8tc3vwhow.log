@@ -1,0 +1,26 @@
+h1 {
+  margin: 0;
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: bold;
+  font-size: calc(3 * var(--base-font-size));
+  line-height: calc(5 * var(--base-font-size));
+  color: #333A56;
+}
+
+h5 {
+  font-weight: var(--font-semi-bold);
+  font-size: calc(0.75 * var(--base-font-size));
+  line-height: var(--base-font-size);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+p {
+
+}
+
+a:not([class]) {
+  color: var(--color-kashmir-blue);
+}

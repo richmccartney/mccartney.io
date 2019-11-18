@@ -1,0 +1,146 @@
+/* 
+  Root Variables
+  ----------------------
+*/
+
+
+:root {
+  --base-font-size: 1rem;
+  --base-spacing: 1rem;
+  --base-font-family: var(--font-open-sans);
+
+  --color-white: #FFFFFF;
+  --color-off-white: #F0F2F7;
+  --color-light-blue: #B6BCD5;
+  --color-kashmir-blue: #52658F;
+  --color-dark-blue: #333A56;
+  --color-grey: #787D90;
+
+  --columns: 12;
+  --column-gutter: calc(1.5 * var(--base-spacing));
+  --column-margin: calc(2 * var(--base-spacing));
+  
+  --font-open-sans: 'Open Sans', sans-serif;
+  --font-playfair-display: 'Playfair Display', serif;
+
+  --font-regular: 400;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+
+  --max-width: calc(90 * var(--base-spacing));
+}
+
+
+
+/*
+  Global App CSS
+  ----------------------
+  Use this file for styles that should be applied to all components.
+  For example, "font-family" within the "body" selector is a CSS property
+  most apps will want applied to all components.
+
+  Any global CSS variables should also be applied here.
+*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  margin: 0px;
+  padding: 0px;
+
+  min-height: 100vh;
+
+  background: var(--color-white);
+
+  color: var(--color-grey);
+
+  font-family: var(--base-font-family);
+  font-weight: var(--font-regular);
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+
+  scroll-behavior: smooth;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]),
+a:-webkit-any-link {
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+  -webkit-text-decoration-color: var(--color-kashmir-blue);
+  text-decoration-color: var(--color-kashmir-blue);
+}
+
+a:hover,
+a:visited {
+  color: var(--color-kashmir-blue);
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: var(--base-spacing);
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+    animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

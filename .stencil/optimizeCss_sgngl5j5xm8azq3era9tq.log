@@ -1,0 +1,21 @@
+header {
+  color: var(--color-dark-blue);
+  height: calc(5 * var(--base-spacing));
+  padding: 0 calc(2 * var(--base-spacing));
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid var(--color-off-white);
+}
+
+header img {
+  display: block;
+}
+
+h1 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 0 12px;
+}
