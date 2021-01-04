@@ -12,8 +12,8 @@ export class AppHome {
       <section>
         <div>
           <h5>Hello my name is Richard McCartney</h5>
-          <h1>Frontend developer, Web&nbsp;designer</h1>
-          <p>I’m an passionate developer and designer currenting empowering the future of telecommunications at <a href="https://bt.com">BT Group plc</a>.</p>
+          <h1>Lead Frontend developer, Web&nbsp;designer</h1>
+          <p>I’m an passionate developer and designer currenting empowering the future of insurance at <a href="https://lloyds.com">Lloyds of London</a>.</p>
         </div>
         <div>
           <img src="/assets/code.svg" alt="Image of a code editor" class="hero-image" />
